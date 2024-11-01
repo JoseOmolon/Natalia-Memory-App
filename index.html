@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <h1>Memory Cards</h1>
-    <div class="grid-container">
-    </div>
-    <p>Score: <span class="score"></span></p>
-    <div class="actions">
-        <button onclick="restart()">Restart</button>
-    </div>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2>Memory Card Game</h2>
+        </nav>
+    </header>
+    <main>
+        <h1>Memory Cards</h1>
+        <div class="grid-container"></div>
+        <p>Score: <span class="score">0</span></p>
+        <div class="actions">
+            <button onclick="restart()">Restart</button>
+        </div>
+    </main>
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
