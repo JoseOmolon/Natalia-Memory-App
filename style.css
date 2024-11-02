@@ -2,13 +2,14 @@ body {
   min-height: 100vh;
   background-color: #f0f8ff;
   color: #333;
-  font-family: 'Comic Sans MS', cursive, sans-serif; /* Child-friendly font */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Header styles */
 header {
   background-color: #ff69b4;
   width: 100%;
@@ -23,15 +24,17 @@ header {
 h1 {
   text-align: center;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 2em;
+  margin: 10px 0;
 }
 
 p {
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
+/* Actions */
 .actions {
   display: flex;
   justify-content: center;
@@ -40,7 +43,7 @@ p {
 
 .actions button {
   padding: 12px 24px;
-  font-size: 20px;
+  font-size: 1.25em;
   border-radius: 10px;
   background-color: #27ae60;
   color: white;
@@ -53,23 +56,28 @@ p {
   background-color: #218c54;
 }
 
+/* Grid container */
 .grid-container {
   display: grid;
   justify-content: center;
   grid-gap: 16px;
-  grid-template-columns: repeat(4, 140px); /* Changed to four columns */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   margin: 20px 0;
+  width: 90%;
+  max-width: 600px;
 }
 
+/* Card styles */
 .card {
-  height: 140px;
-  width: 140px;
+  height: 100px;
+  width: 100px;
   border-radius: 10px;
   background-color: #ffffff;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* Pointer cursor for clickable elements */
 }
 
 .front-image {
@@ -77,6 +85,7 @@ p {
   height: 60px;
 }
 
+/* Card flip */
 .card.flipped {
   transform: rotateY(180deg);
 }
@@ -92,17 +101,47 @@ p {
   width: 100%;
 }
 
+/* Card faces */
 .card .front {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffebcd; /* Light color for the front */
+  background-color: #ffebcd;
+  transform: rotateY(180deg);
 }
 
 .card .back {
-  background-color: #add8e6; /* Light blue for the back */
+  background-color: #add8e6;
 }
 
-.card .front {
-  transform: rotateY(180deg);
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 140px);
+  }
+
+  .card {
+    height: 140px;
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1.25em;
+  }
+
+  .actions button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  .card {
+    height: 80px;
+    width: 80px;
+  }
 }
