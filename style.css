@@ -61,7 +61,7 @@ p {
   display: grid;
   justify-content: center;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjusted min size */
   margin: 20px 0;
   width: 90%;
   max-width: 600px;
@@ -69,8 +69,8 @@ p {
 
 /* Card styles */
 .card {
-  height: 100px;
-  width: 100px;
+  height: 80px; /* Adjusted height */
+  width: 80px; /* Adjusted width */
   border-radius: 10px;
   background-color: #ffffff;
   position: relative;
@@ -81,8 +81,8 @@ p {
 }
 
 .front-image {
-  width: 60px;
-  height: 60px;
+  width: 40px; /* Adjusted image size */
+  height: 40px; /* Adjusted image size */
 }
 
 /* Card flip */
@@ -117,12 +117,17 @@ p {
 /* Responsive adjustments */
 @media (min-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(4, 140px);
+    grid-template-columns: repeat(4, 140px); /* 4 columns on larger screens */
   }
 
   .card {
-    height: 140px;
-    width: 140px;
+    height: 140px; /* Card height on larger screens */
+    width: 140px; /* Card width on larger screens */
+  }
+
+  .front-image {
+    width: 60px; /* Image size on larger screens */
+    height: 60px; /* Image size on larger screens */
   }
 }
 
@@ -141,7 +146,7 @@ p {
   }
 
   .card {
-    height: 80px;
-    width: 80px;
+    height: 80px; /* Maintain smaller height on mobile */
+    width: 80px; /* Maintain smaller width on mobile */
   }
 }
