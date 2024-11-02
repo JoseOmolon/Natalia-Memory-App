@@ -60,7 +60,7 @@ p {
 .grid-container {
   display: grid;
   justify-content: center;
-  grid-gap: 16px;
+  grid-gap: 8px; /* Reduced gap */
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjusted min size */
   margin: 20px 0;
   width: 90%;
@@ -143,6 +143,11 @@ p {
   .actions button {
     font-size: 1em;
     padding: 10px 20px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+    grid-gap: 4px; /* Further reduced gap for mobile */
   }
 
   .card {
